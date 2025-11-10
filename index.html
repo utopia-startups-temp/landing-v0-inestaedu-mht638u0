@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InestaEdu - Transform Your Learning Journey</title>
+    <meta name="description" content="Discover personalized learning experiences with InestaEdu. Advanced AI-powered education platform for students and professionals.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-primary': '#ff4ba8',
+                        'brand-secondary': '#fffc4b',
+                        'brand-accent': '#4bffa2',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'fade-in-down': 'fadeInDown 0.6s ease-out',
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'pulse-slow': 'pulse 3s infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #ff4ba8 0%, #fffc4b 50%, #4bffa2 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #ff4ba8 0%, #fffc4b 50%, #4bffa2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold gradient-text">InestaEdu</h1>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#features" class="text-gray-700 hover:text-brand-primary transition-colors duration-300 font-medium">Features</a>
+                        <a href="#about" class="text-gray-700 hover:text-brand-primary transition-colors duration-300 font-medium">About</a>
+                        <a href="#testimonials" class="text-gray-700 hover:text-brand-primary transition-colors duration-300 font-medium">Reviews</a>
+                        <a href="#contact" class="text-gray-700 hover:text-brand-primary transition-colors duration-300 font-medium">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <button data-project-link class="bg-brand-primary text-white px-6 py-2 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:scale-105">
+                        Get Started
+                    </button>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-brand-primary">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#features" class="block px-3 py-2 text-gray-700 hover:text-brand-primary">Features</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-brand-primary">About</a>
+                <a href="#testimonials" class="block px-3 py-2 text-gray-700 hover:text-brand-primary">Reviews</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-brand-primary">Contact</a>
+                <button data-project-link class="w-full mt-2 bg-brand-primary text-white px-4 py-2 rounded-full font-semibold">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-16 gradient-bg min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in-up">
+                    <h1 class="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                        Transform Your
+                        <span class="block text-gray-900">Learning Journey</span>
+                    </h1>
+                    <p class="text-xl text-gray-800 mb-8 leading-relaxed">
+                        Discover personalized, AI-powered education that adapts to your unique learning style. 
+                        Join thousands of students achieving their goals with InestaEdu.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button data-project-link class="bg-white text-brand-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-lg">
+                            Start Learning Today
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-brand-primary transition-all duration-300">
+                            Watch Demo
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="animate-fade-in-down">
+                    <div class="relative">
+                        <div class="w-full h-96 bg-white rounded-3xl shadow-2xl p-8 hover-lift">
+                            <div class="h-full bg-gradient-to-br from-brand-primary/10 to-brand-accent/10 rounded-2xl flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="w-24 h-24 bg-brand-primary rounded-full mx-auto mb-4 flex items-center justify-center animate-pulse-slow">
+                                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-2">AI-Powered Learning</h3>
+                                    <p class="text-gray-600">Personalized education at your fingertips</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating elements -->
+                        <div class="absolute -top-4 -right-4 w-16 h-16 bg-brand-secondary rounded-full animate-bounce-slow opacity-80"></div>
+                        <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-brand-accent rounded-full animate-pulse-slow opacity-80"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                    Why Choose <span class="gradient-text">InestaEdu</span>?
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Experience the future of education with our cutting-edge features designed to maximize your learning potential.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-brand-primary/5 to-brand-primary/10 p-8 rounded-3xl hover-lift animate-fade-in-up">
+                    <div class="w-16 h-16 bg-brand-primary rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">AI-Powered Personalization</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Our advanced AI adapts to your learning style, pace, and preferences to create a truly personalized educational experience.
+                    </p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-brand-secondary/5 to-brand-secondary/10 p-8 rounded-3xl hover-lift animate-fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="w-16 h-16 bg-brand-secondary rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-
